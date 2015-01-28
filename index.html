@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Flickr Search</title>
+	<meta name="description" content="Flickr Search">
+	<meta name="author" content="Martin Ong">
+	<!-- Styles -->
+	<link rel="stylesheet" href="stylesheets/reset.css">
+	<link rel="stylesheet" href="stylesheets/main.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400' rel='stylesheet' type='text/css'>
+	<!-- Script -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
+	<script language="javascript" src="node_modules/flickrapi/browser/flickrapi.dev.js"></script>
+	<script language="javascript" src="js/flickrsearch.js"></script>
+</head>
+
+<body>
+	<header class="container group">    
+		<h1 class="logo">
+			<a href="index.html">Flickr Search</a>
+		</h1>
+
+		<h3 class="subtitle">&nbsp;</h3>
+		<nav class="main-nav" style="display:none;">
+			<ul>
+				<li><a href="index.html">New Search</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Main Content -->
+	<section class="container" id="search_area">
+		<input type="text" id="searchbar"></input>
+		&nbsp;
+		<input type="submit" value="Search" id="search_button"></input>
+
+		<em id="advtext"><br /><br /><a>Show Advanced Search</a></em>
+		<div id="advsearch" style="display:none;">
+			<br />
+			Search by Username: <input type="text" id="username"></input>
+			<br /><br />
+			Uploaded from 
+			<select name="Month" id="minM">
+				<option> - Month - </option>
+				<option value="01">January</option>
+				<option value="02">Febuary</option>
+				<option value="03">March</option>
+				<option value="04">April</option>
+				<option value="05">May</option>
+				<option value="06">June</option>
+				<option value="07">July</option>
+				<option value="08">August</option>
+				<option value="09">September</option>
+				<option value="10">October</option>
+				<option value="11">November</option>
+				<option value="12">December</option>
+			</select>
+			<select name="Day" id="minD">
+				<option> - Day - </option>
+				<option value="01">1</option>
+				<option value="02">2</option>
+				<option value="03">3</option>
+				<option value="04">4</option>
+				<option value="05">5</option>
+				<option value="06">6</option>
+				<option value="07">7</option>
+				<option value="08">8</option>
+				<option value="09">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+			</select>
+			<select name="Year" id="minY">
+				<option> - Year - </option>
+				<option value="2014">2014</option>
+				<option value="2013">2013</option>
+				<option value="2012">2012</option>
+				<option value="2011">2011</option>
+				<option value="2010">2010</option>
+				<option value="2009">2009</option>
+				<option value="2008">2008</option>
+				<option value="2007">2007</option>
+				<option value="2006">2006</option>
+				<option value="2005">2005</option>
+				<option value="2004">2004</option>
+				<option value="2003">2003</option>
+				<option value="2002">2002</option>
+				<option value="2001">2001</option>
+				<option value="2000">2000</option>
+				<option value="1999">1999</option>
+				<option value="1998">1998</option>
+				<option value="1997">1997</option>
+				<option value="1996">1996</option>
+				<option value="1995">1995</option>
+				<option value="1994">1994</option>
+				<option value="1993">1993</option>
+				<option value="1992">1992</option>
+				<option value="1991">1991</option>
+				<option value="1990">1990</option>	
+			</select>
+			to 
+			<select name="Month" id="maxM">
+				<option> - Month - </option>
+				<option value="01">January</option>
+				<option value="02">Febuary</option>
+				<option value="03">March</option>
+				<option value="04">April</option>
+				<option value="05">May</option>
+				<option value="06">June</option>
+				<option value="07">July</option>
+				<option value="08">August</option>
+				<option value="09">September</option>
+				<option value="10">October</option>
+				<option value="11">November</option>
+				<option value="12">December</option>
+			</select>
+			<select name="Day" id="maxD">
+				<option> - Day - </option>
+				<option value="01">1</option>
+				<option value="02">2</option>
+				<option value="03">3</option>
+				<option value="04">4</option>
+				<option value="05">5</option>
+				<option value="06">6</option>
+				<option value="07">7</option>
+				<option value="08">8</option>
+				<option value="09">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+			</select>
+			<select name="Year" id="maxY">
+				<option> - Year - </option>
+				<option value="2014">2014</option>
+				<option value="2013">2013</option>
+				<option value="2012">2012</option>
+				<option value="2011">2011</option>
+				<option value="2010">2010</option>
+				<option value="2009">2009</option>
+				<option value="2008">2008</option>
+				<option value="2007">2007</option>
+				<option value="2006">2006</option>
+				<option value="2005">2005</option>
+				<option value="2004">2004</option>
+				<option value="2003">2003</option>
+				<option value="2002">2002</option>
+				<option value="2001">2001</option>
+				<option value="2000">2000</option>
+				<option value="1999">1999</option>
+				<option value="1998">1998</option>
+				<option value="1997">1997</option>
+				<option value="1996">1996</option>
+				<option value="1995">1995</option>
+				<option value="1994">1994</option>
+				<option value="1993">1993</option>
+				<option value="1992">1992</option>
+				<option value="1991">1991</option>
+				<option value="1990">1990</option>	
+			</select>
+		</div>
+	</section>
+
+	<section class="container" style="margin-top: 20px; margin-bottom: 20px;">
+		<em id="status"></em>
+	</section>
+
+	<section class="container" id="results" style="display:none;">
+		<table id="results_table" style="width:100%;">
+			<tbody>
+				<tr>
+					<td id="imgtd0" style="width:20%;"></td>
+					<td id="imgtd1" style="width:20%;"></td>
+					<td id="imgtd2" style="width:20%;"></td>
+					<td id="imgtd3" style="width:20%;"></td>
+					<td id="imgtd4" style="width:20%;"></td>
+				</tr>
+				<tr>
+					<td id="username0" style="text-align:center;width:20%;"></td>
+					<td id="username1" style="text-align:center;width:20%;"></td>
+					<td id="username2" style="text-align:center;width:20%;"></td>
+					<td id="username3" style="text-align:center;width:20%;"></td>
+					<td id="username4" style="text-align:center;width:20%;"></td>
+				</tr>
+				<tr>
+					<td id="imgtd5" style="width:20%;"></td>
+					<td id="imgtd6" style="width:20%;"></td>
+					<td id="imgtd7" style="width:20%;"></td>
+					<td id="imgtd8" style="width:20%;"></td>
+					<td id="imgtd9" style="width:20%;"></td>
+				</tr>
+				<tr>
+					<td id="username5" style="text-align:center;width:20%;"></td>
+					<td id="username6" style="text-align:center;width:20%;"></td>
+					<td id="username7" style="text-align:center;width:20%;"></td>
+					<td id="username8" style="text-align:center;width:20%;"></td>
+					<td id="username9" style="text-align:center;width:20%;"></td>
+				</tr>
+				<tr>
+					<td><br /><input type="submit" value="Previous Page" id="prevpage" style="display:none;"></input></td>
+					<td></td>
+					<td style="text-align:center;"><br /><em id="pagenum"></em></td>
+					<td></td>
+					<td style="text-align:right;"><br /><input type="submit" value="Next Page" id="nextpage" style="display:none;"></input></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		
+	</section>
+	<!-- End Content -->
+
+	<footer class="container">
+		<small>Made by <a href="http://martinong.com/">Martin Ong</a></small>
+	</footer>
+
+</body>
+</html>

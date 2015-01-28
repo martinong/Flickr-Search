@@ -1,0 +1,236 @@
+*,
+*:before,
+*.after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	min-height: 100%;
+	background: lightgray;
+}
+
+body {
+	min-width: 960px;
+
+	margin: 20px auto;
+	background: white;
+
+	color: #888;
+	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", 
+	Helvetica, Arial, sans-serif;
+
+}
+
+/*
+  ========================================
+  Clearfix
+  ========================================
+*/
+
+.group:before,
+.group:after {
+	content: "";
+	display: table;
+}
+.group:after {
+	clear: both;
+}
+.group {
+	clear: both;
+	*zoom: 1;
+}
+
+/*
+  ========================================
+  Container / Grid Structure
+  ========================================
+*/
+
+.container,
+.grid {
+	margin: 0 auto;
+	width: 960px;
+}
+.container {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.grid,
+.col-1-3,
+.col-2-3 {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.col-1-3,
+.col-2-3  {
+	display: inline-block;
+	vertical-align: top;
+}
+.col-1-3 {
+	width: 33.333%;
+}
+.col-2-3 {
+	width: 66.667%;
+}
+
+/*
+  ========================================
+  Typography
+  ========================================
+*/
+
+h1, h2, h3, h4 {
+	color: #418FDE;
+}
+h1, h3, h4, h5, p {
+	margin-bottom: 22px;
+}
+h1 {
+	font-size: 36px;
+	line-height: 44px;
+}
+h2 {
+	font-size: 24px;
+	line-height: 44px;
+}
+h3 {
+	font-size: 21px;
+}
+h4 {
+	font-size: 18px;
+}
+h5 {
+	color: #a9b2b9;
+	font-size: 14px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+strong {
+	font-weight: 400;
+}
+cite,
+em {
+	font-style: italic;
+}
+small {
+	font-size: 14px;
+}
+
+/*
+  ========================================
+  Links
+  ========================================
+*/
+
+a {
+	color: #418FDE;
+	text-decoration: none;
+}
+a:hover {
+	color: #a9b2b9;
+}
+p a {
+	border-bottom: 1px solid #dfe2e5;
+}
+
+/*
+  ========================================
+  Buttons
+  ========================================
+*/
+
+.btn {
+	border-radius: 5px;
+	display: inline-block;
+	margin: 0;
+}
+.btn-alt {
+	border: 1px solid #dfe2e5;
+	border-radius: 5px;
+	padding: 10px 30px;
+}
+
+/*
+========================================
+  Specific Stylings
+========================================
+*/
+
+.logo {
+	border-top: 4px solid #418FDE;
+	float: left;
+	font-size: 48px;
+	font-weight: 100;
+	line-height: 44px;
+	padding-top: 40px;
+	letter-spacing: 0.25em;
+	text-transform: uppercase;
+}
+
+.subtitle {
+	margin: 22px 0 22px 0;
+	font-weight: 400;
+	text-align: right;
+}
+
+.main-nav {
+	text-align: right;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+.main-nav li {
+	display: inline-block;
+	margin: 0 15px;
+}
+
+.main-nav li:last-child {
+	margin-right: 0;
+}
+
+.cover-photo {
+	width: 100%;
+	background: no-repeat center center; 
+	min-height: 340px;
+	-webkit-background-size: cover;
+	   -moz-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+}
+
+div {
+	margin-bottom: 22px;
+}
+
+footer {
+	padding: 20px 0 20px 0;
+}
+
+#search_area {
+	text-align: center;
+	margin-top: 150px;
+	margin-bottom: 150px;
+}
+
+#searchbar {
+	height: 35px;
+	font-size: 20px;
+	line-height: 30px;
+	width: 400px;
+}
+
+#search_button {
+	font-size: 20px;
+	border: 1px solid lightgray;
+	background: lightgray;
+	width: 6em;
+	height: 35px;
+}
+
+#results_table img {
+	max-width: 150px;
+	margin: 15px;
+}
